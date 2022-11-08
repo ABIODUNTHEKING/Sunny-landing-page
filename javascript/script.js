@@ -1,6 +1,6 @@
 let menuButton = document.querySelector(".menu")
 let menuContent = document.querySelector(".navbar")
-let hiddenContent = menuButton.getAttribute("aria-hidden")
+let pageLinks = document.querySelectorAll(".page-links"), i;
 
 menuButton.addEventListener('click', ()=>{
     if(menuContent.style.display === "none"){
@@ -12,3 +12,14 @@ menuButton.addEventListener('click', ()=>{
         menuButton.setAttribute("aria-hidden", "true")
     }
 })
+
+console.log(pageLinks)
+for(i = 0; i < pageLinks.length; ++i){
+    pageLinks[i].addEventListener('click', ()=>{
+        menuContent.style.display = "none"
+        menuButton.setAttribute("aria-hidden", "true")
+    })
+}
+
+
+
